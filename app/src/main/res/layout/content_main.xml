@@ -11,7 +11,7 @@
         android:id="@+id/my_webview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@Välkomen på dig här!"
+        android:text="@string/v_lkomen_p_dig_h_r"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
