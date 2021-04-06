@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -61,12 +62,15 @@ public class MainActivity extends AppCompatActivity {
            one (1) screenshot showing your external web page.
         */
 
+        //Enable javascript
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                WebView my_WebView = (WebView) findViewById(R.id.my_webView);
+                WebSettings webSettings = my_WebView.getSettings();
+                webSettings.setJavaScriptEnabled(true);
+                my_WebView.loadUrl("https://wwwlab.iit.his.se/a19meram/Mobilapplikationer/App%20prototyp/MeronGym.html");
             }
         });
     }
