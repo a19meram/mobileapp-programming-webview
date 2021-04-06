@@ -22,10 +22,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void showExternalWebPage(){
         // TODO: Add your code for showing external web page here
+
+        WebView my_WebView = new WebView(this);
+
+        setContentView(my_WebView);
+
+        my_WebView.loadUrl("https://wwwlab.iit.his.se/a19meram/Mobilapplikationer/App%20prototyp/MeronGym.html");
     }
 
     public void showInternalWebPage(){
         // TODO: Add your code for showing internal web page here
+
+        WebView my_WebView = new WebView(this);
+
+        setContentView(my_WebView);
+
+        my_WebView.loadUrl("https://wwwlab.iit.his.se/a19meram/Mobilapplikationer/App%20prototyp/MeronGym.html");
     }
 
     @Override
@@ -92,11 +104,13 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_external_web) {
             Log.d("==>","Will display external web page");
+            showExternalWebPage();
             return true;
         }
 
         if (id == R.id.action_internal_web) {
             Log.d("==>","Will display internal web page");
+            showInternalWebPage();
             return true;
         }
 
