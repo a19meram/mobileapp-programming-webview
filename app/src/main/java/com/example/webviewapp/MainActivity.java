@@ -67,10 +67,10 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                WebView my_WebView = (WebView) findViewById(R.id.my_webView);
-                WebSettings webSettings = my_WebView.getSettings();
-                webSettings.setJavaScriptEnabled(true);
-                my_WebView.loadUrl("https://wwwlab.iit.his.se/a19meram/Mobilapplikationer/App%20prototyp/MeronGym.html");
+                WebView my_WebView = (WebView) findViewById(R.id.my_webView); //Börjar med att conecta my_WebView med webview ID
+                WebSettings webSettings = my_WebView.getSettings(); //gör nästa steg innan man enabla javacripten, detta ger mängd andra användbara inställningar
+                webSettings.setJavaScriptEnabled(true); //enabla javascripten
+                my_WebView.loadUrl("https://wwwlab.iit.his.se/a19meram/Mobilapplikationer/App%20prototyp/MeronGym.html"); //extarn URL
             }
         });
     }
