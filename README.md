@@ -3,41 +3,44 @@
 
 **Skriv din rapport här!**
 
-_Du kan ta bort all text som finns sedan tidigare_.
 
-
-
-
-
-## Följande grundsyn gäller dugga-svar:
-
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
+I den här dugga skulle man följa olika steg för att kunna öva sig på hur man gör/bygger en webview och lägga
+till olika länkar som en extern sida respektive intern sida. För att lösa den första med webview va man tvungen att radera den
+befintliga textview till en typ av Webview, detta har man gjort i filen med namnet content_main.xml. Koden för webview kan man se nedan i kod blocket där en id
+tillförs för att kunna återanvända detta i de framöver processen. I MainActivity håller man med att lägga en private member och sedan återanvänder detta längre ner under
+Oncreate och sedan använda detta för att kunna ladda upp de externa och interna sidorna som ligger som krav i duggan. Resultatet på den externa och interna sidorna kan man
+se längre ner under figur 1 och 2. Dessa sidor har man kunnat anropa
+längre ner under de olika if-satser då vi har två olika metoder och kalla på sidor, detta har man löst med hjälp
+av en anrop av funktionen med namnet showExternalWebPage() och showInternalWebPage().
 
 Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
 
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
-}
+<WebView
+        android:id="@+id/my_webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        />
+
+        //noinspection SimplifiableIfStatement
+                if (id == R.id.action_external_web) {
+                    Log.d("==>","Will display external web page");
+                    showExternalWebPage();
+                    return true;
+                }
+
+                if (id == R.id.action_internal_web) {
+                    Log.d("==>","Will display internal web page");
+                    showInternalWebPage();
+                    return true;
+                }
 ```
 
 Bilder läggs i samma mapp som markdown-filen.
 
-![](android.png)
+![](Figur1.png)
+![](Figur2.png)
 
 Läs gärna:
 
